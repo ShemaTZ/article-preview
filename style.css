@@ -1,0 +1,227 @@
+body {
+    background-color: hsl(210, 46%, 95%);
+    font-family: 'Manrope', sans-serif;
+}
+
+.card {
+    max-width: 720px;
+    margin: 0 auto;
+    margin-top: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    position: relative;
+}
+
+.left {
+    flex: 0 0 285px;
+    overflow: hidden;
+}
+
+.drawer {
+    width: 120%;
+    height: 100%;
+    object-fit: cover;
+    object-position: -30px 0;
+}
+
+.right {
+    padding: 32px 40px;
+    flex: 1;
+}
+
+h3 {
+    color: hsl(217, 19%, 35%);
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.right p {
+    color: hsl(214, 17%, 51%);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.author-text h5 {
+    color: hsl(217, 19%, 35%);
+    font-size: 13px;
+    margin: 0 0 4px 0;
+}
+
+.author-text p {
+    color: hsl(212, 23%, 69%);
+    font-size: 13px;
+    margin: 0;
+}
+
+.share-container {
+    background-color: hsl(210, 46%, 95%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.share {
+    width: 15px;
+    height: 13px;
+}
+.share-toggle {
+    display: none;
+    position: absolute;
+    background-color: hsl(217, 19%, 35%);
+    padding: 15px 30px;
+    border-radius: 10px;
+    right: -80px;
+    bottom: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.share-toggle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: hsl(217, 19%, 35%) transparent transparent;
+}
+
+.share-toggle p {
+    color: hsl(212, 23%, 69%);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.share-toggle img {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.share-toggle.active {
+    display: flex;
+}
+
+.share-container.active {
+    background-color: hsl(214, 17%, 51%);
+}
+
+.share-container.active .share {
+    filter: brightness(0) invert(1);
+}
+
+.share-container:hover {
+  background-color: hsl(214, 17%, 51%);
+}
+.share-container:hover .share {
+  filter: brightness(0) invert(1);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top: 20px;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    max-width: 375px;
+    margin-top: 100px;
+  }
+
+  .left {
+    flex: 0 0 250px;
+    width: 100%;
+  }
+
+  .drawer {
+    width: 100%;
+    object-position: center;
+  }
+
+  .right {
+    padding: 30px;
+    position: relative;
+  }
+
+  .footer {
+    padding: 15px 30px;
+    margin: 0 -30px -30px; 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .footer .author-info {
+    display: flex;
+  }
+
+  .footer .share-toggle {
+    display: none;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer.active {
+    background-color: hsl(217, 19%, 35%);
+  }
+
+  .footer.active .author-info {
+    display: none;
+  }
+
+  .footer.active .share-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .footer.active .share-container {
+    background-color: hsl(214, 17%, 51%);
+  }
+
+  .footer.active .share-container .share {
+    filter: brightness(0) invert(1);
+  }
+}
